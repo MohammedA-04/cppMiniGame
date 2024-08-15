@@ -8,8 +8,10 @@ class Rooms
 		Rooms();
 	
 		int getRoomsLeft() const;
-		int decrementRoom();
-		void setRooms(int roomsArg);
+		void decrementRoom();
+		void setRandomRooms();
+		int genRandomHp();
+		void enterRoomGame();
 
 	private:
 		int rooms;

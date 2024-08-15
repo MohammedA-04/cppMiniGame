@@ -4,6 +4,8 @@
 #include <thread>
 #include "player.h"
 #include "monster.h"
+#include "Rooms.h"
+#include <string>
 
 void sysExit();
 
@@ -78,15 +80,21 @@ int main()
 
             }
             else if (cquit == 'c' || cquit == 'C') {
-                int roomAmount = std::rand() % 6; // num between 0 to 6
+                int roomAmount = std::rand() % 5 + 1; // num between 0 to 6
                 std::cout << "Entering Rooms..." << '\n';
                 std::cout << "There are " << roomAmount << " rooms!" << '\n';
-                isGameStarted = true;
 
                 std::this_thread::sleep_for(std::chrono::seconds(2));
-                system("cls");
+                // system("cls");
 
-                std::cout << "Hello\n";
+                Rooms rooms;
+                std::cout << "Debug: About to enter room game" << std::endl;
+                rooms.enterRoomGame();
+                std::cout << "Debug: Finished room game" << std::endl;
+
+                std::cout << "Press Enter to exit...";
+                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                // isGameStarted = true;
             }
             else {
                 std::cout << "Exiting application.\n";
