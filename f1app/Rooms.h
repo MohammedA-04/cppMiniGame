@@ -12,6 +12,7 @@ class Rooms
 		void setRandomRooms();
 		int genRandomHp();
 		void enterRoomGame();
+	
 
 	private:
 		int rooms;

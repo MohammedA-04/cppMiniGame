@@ -20,9 +20,11 @@ int Rooms::getRoomsLeft() const{
 
 void Rooms::decrementRoom() {
 	if (rooms > 0) {
-		rooms--;
+		rooms = rooms--;
 	}
 }
+
+
 
 void Rooms::setRandomRooms() {
 	rooms = std::rand() % 5 + 1; // Gen num between 1 and 5
@@ -35,9 +37,10 @@ int Rooms::genRandomHp() {
 
 // Perform Game Ops
 void Rooms::enterRoomGame() {
-
+	
 	// setup env variables
 	setRandomRooms();
+	std::cout << "There are " << getRoomsLeft() << " rooms!" << '\n';
 
 	// if rooms are 1 to 5
 	if (rooms <= 5 && rooms > 0) {
@@ -45,7 +48,7 @@ void Rooms::enterRoomGame() {
 		// loop until rooms is 0
 		while (getRoomsLeft() > 0) {
 
-			std::cout << "Entering Room " << getRoomsLeft() << "... \n";
+			std::cout << "\n\nEntering Room " << (getRoomsLeft()) << "... \n";
 			Player player1;
 			Monster monster1(genRandomHp());
 
@@ -68,7 +71,7 @@ void Rooms::enterRoomGame() {
 					std::cout << "You have defeated the monster!\n\n";
 					decrementRoom();
 
-					std::cout << "Remaining Rooms: " << getRoomsLeft() << '\n';
+					std::cout << "Remaining Rooms: " << (getRoomsLeft()) << '\n';
 				}
 			}
 		}
