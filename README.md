@@ -7,7 +7,8 @@ Once the initial game round is over, the user can enter the randomized rooms, pl
 - This consists of seed and srand to randomize the number of rooms
 - Attacks Performed Until Monster is defeated
 - Rooms are capped from 5 to 0
-- Monster can undefined amount of HP bounded to upper cap of 200 i think
+- Monster can the undefined amount  of HP bounded to an upper cap of 200
+  - health point (HP) can range from 1 ~ 200HP!
 
 @Author: Mohammed Ahmed
 @Project Desc: Part of Learning Cpp
